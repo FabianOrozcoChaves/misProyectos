@@ -1,0 +1,125 @@
+// 1)
+SelectionSort (video 5)
+Para i = 1...n
+  m = i
+  Para j = i+1...n
+    si A[j] < A[m]
+      m = j
+  t = A[i];
+  A[i] = A[m];
+  A[m] = aux;
+
+// 2)
+INSERTION-SORT(A) (Cormen: secc 2.1-2 pág26)
+for j = 2 to A.length
+  key = A[j]
+  // insert A[j] into the sorted
+    sequence A[1...j-1]
+  i = j - 1
+  while i > 0 and A[i] > key
+    A[i+1] = A[i]
+    i = i-1
+  A[i+1] = key
+
+// 3)
+merge(A,p,q,r) (Cormen: pág31)
+n1 = q - p + 1
+n2 = r - q
+let L[1..n1 + 1] and R[1..n2 + 1] be new arrays
+for i = 1 to n1
+    L[i] = A[p + i - 1]
+for j = 1 to n2
+  R[j] = A[q + j]
+L[n1 + 1] = inf
+R[n2 + 1 ] = inf 
+i = 1
+j = 1
+for k = p to r
+    if L[i] <= R[j]
+        A[k] = L[i]
+        i = i + 1
+    else A[k] = R[j]
+      j = j + 1
+
+mergeSort(A,p,r) (Cormen: pág34)
+if p < r
+  q = [(p + r) / 2]
+  mergeSort(A,p,q)
+  mergeSort(A,q + 1, r)
+  merge(A,p,q,r)
+
+
+// 4)
+Monticularizar(A):
+m ←Extraer-Máximo(A): 
+v ←Vacío(A): Indica si el montículo esta vacío o no.
+
+Ordenar(A)
+  Monticularizar(A)
+  i = A.length
+  while not Vacío(A)
+  A[i--] = Extraer-Máximo(A)
+
+Corregir-Cima(A, k)
+  j = arg máx { A[ k, hi(k), hd(k)] }
+  if k != j
+  intercambie( A[k], A[j] )
+  Corregir-Cima(A, j)
+
+Monticularizar(A)
+  n = length(A)
+  for k = n/2 rounddown to 1
+    CORREGIR-CIMA(A,k)
+
+Extraer-Máximo(A)
+  m = A[1]
+  A[1] = A[A.length−−]
+  Corregir-Cima(A, 1)
+  return m
+
+
+// 5)
+HEAPSORT(A)
+ BUILD-MAX-HEAP(A)
+ for i = A.length downto 2
+ 	exchange A[1] with A[i]
+ 	A.heap-size = A.heap-size - 1
+ 	MAX-HEAPIFY(A, 1)
+   // -----------------
+
+MAX-HEAPIFY(A, i)
+ L = LEFT(i)
+ r = RIGHT(i)
+ if L <= A.heap-size and A[L] > A[i]
+ 	largest = L
+ else largest = i
+ if r <= A.heap-size and A[r] > A[largest]
+ 	largest = r
+ if largest ¡= i
+ 	exchange A[i] with A[largest]
+ 	MAX-HEAPIFY(A, largest)
+
+   // -----------------
+BUILD-MAX-HEAP(A)
+ A.heap-size = A.length
+ for i = pisoA.length/2piso downto 1
+ 	MAX-HEAPIFY(A, i )
+// ------------------------------------
+// 6)
+  RADIX-SORT (A, d)
+   for i = 1 to d
+   use a stable sort to sort array A on digit i
+  
+  COUNTING-SORT(A, B, k)
+   let C[0…k] be a new array
+   for i = 0 to k
+   	C[i] = 0
+   for j = 1 to A.length
+   	C[A[j]] = C[A[j]] + 1
+   // C[i] now contains the number of elements equal to i.
+   for i = 1 to k
+   	C[i] = C[i] + C[i-1]
+   // C[i] now contains the number of elements less than or equal to i.
+   for j = A.length downto 1
+   	B[C[A[j]]] = A[j]
+   	C[A[j]] = C[A[j]] - 1
