@@ -1,0 +1,26 @@
+########################################################################## lista enlazada
+$ g++ -Wall -Wextra -O3 mainList.cpp -o mainList; ./mainList
+
+-inicia
+
+Qty de busquedas en 10 segundos [llist]
+Aleatoria:  2607
+Secuencial: 2644
+
+-termina
+
+########################################################################## arbol binario
+
+$ g++ -Wall -Wextra -O3 mainTree.cpp -o mainTree; ./mainTree
+
+-inicia
+
+Qty de busquedas en 10 segundos [tree]
+Aleatoria[rec]:  7236477
+Aleatoria[it]:   7488920
+Secuencial[rec]: 3056
+Secuencial[it]:  2985
+
+-termina
+
+##########################################################################
