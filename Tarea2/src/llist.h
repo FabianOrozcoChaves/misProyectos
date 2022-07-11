@@ -1,4 +1,5 @@
 // Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr
+
 #ifndef LINKED_LIST_llist
 #define LINKED_LIST_llist
 #include <iostream>
@@ -96,3 +97,5 @@ private:
 };
 
 #endif    // LINKED_LIST_llist
+
+// Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr

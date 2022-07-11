@@ -1,4 +1,5 @@
 // Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr
+
 #include <chrono>
 #include <iostream>
 #include <random>
@@ -171,3 +172,5 @@ int f_search_rand_it(tree<int>* myTree){
   return 0;
 }
 // ################################################################
+
+// Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr

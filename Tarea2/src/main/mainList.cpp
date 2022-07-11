@@ -1,4 +1,5 @@
 // Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr
+
 #include "llist.h"
 #include <random>
 #include <chrono>
@@ -80,3 +81,5 @@ void llenarLista_sec(llist<int>* lista) {
   }
 }
 // ################################################################
+
+// Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr

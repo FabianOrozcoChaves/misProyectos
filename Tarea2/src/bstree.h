@@ -242,3 +242,5 @@ private:
     
 };
 #endif    // BINARY_SEARCH_Tree
+
+// Copyright 2021 Fabian Orozco Chaves B95690 fabian.orozcochaves@ucr.ac.cr
